@@ -1,4 +1,9 @@
-
+function formatField(field) {
+    return field
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
 
 const fetchHyperLiquidData = async () => {
     try {
@@ -19,7 +24,7 @@ const fetchHyperLiquidData = async () => {
         for(const field in result){
             const tr = document.createElement('tr');
             const td1 = document.createElement('td');
-            td1.textContent = field
+            td1.textContent = formatField(field)
             tr.appendChild(td1);
             const td2 = document.createElement('td');
             td2.textContent = Number(result[field]).toFixed(5)
@@ -28,6 +33,7 @@ const fetchHyperLiquidData = async () => {
         }
 
     } catch (error) {
+        document.querySelector('#hyperliquid').innerHTML = '';
         document.querySelector('#hl-loader').hidden = true;
         document.getElementById('hl-message').textContent = 'Cannot get data'
         console.log("Cannot get hyperliquid data",error)
@@ -54,7 +60,7 @@ const fetchHyperLiquidData = async () => {
         for(const field in result){
             const tr = document.createElement('tr');
             const td1 = document.createElement('td');
-            td1.textContent = field
+            td1.textContent = formatField(field)
             tr.appendChild(td1);
             const td2 = document.createElement('td');
             td2.textContent = Number(result[field]).toFixed(5)
@@ -62,7 +68,8 @@ const fetchHyperLiquidData = async () => {
             tbody.appendChild(tr);
         }
     } catch (error) {
-       document.querySelector('#aave-loader').hidden = true;
+        document.querySelector('#aave').innerHTML = '';
+        document.querySelector('#aave-loader').hidden = true;
         document.getElementById('aave-message').textContent = 'Cannot get data'
         console.log("Cannot get aave data",error)
     }
