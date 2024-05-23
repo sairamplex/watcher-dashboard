@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Watcher Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Hyperliquid</h1>
+  <div class="table-container">
+    <table>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+      <tbody id="hyperliquid"></tbody>
+    </table>
+    <div class="loader" id="hl-loader"></div>
+    <div class="message" id="hl-message"></div>
+  </div>
+  <h1>Aave</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="aave"></tbody>
+    </table>
+    <div class="loader" id="aave-loader"></div>
+    <div class="message" id="aave-message"></div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
