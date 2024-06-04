@@ -7,7 +7,7 @@ function formatField(field) {
 
 const fetchData = async (source) => {
     try {
-        let response = await fetch(`https://autovault-g9v7.onrender.com/${source}-get-data`, {
+        let response = await fetch(`https://autovault-jaoz.onrender.com/${source}-get-data`, {
             headers: {
                 'Content-type': 'application/json'
             }
