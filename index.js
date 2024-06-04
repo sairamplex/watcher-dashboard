@@ -43,9 +43,12 @@ const fetchData = async (source) => {
   window.addEventListener('load', () => {
     document.getElementById('hl-loader').hidden = false;
     document.getElementById('aave-loader').hidden = false;
+    document.getElementById('binance-loader').hidden = false;
     fetchData("hl");
     fetchData("aave");
+    fetchData("binance");
     setInterval(() => fetchData("hl"), 5000);
     setInterval(() => fetchData("aave"), 5000);
+    setInterval(() => fetchData("binance"), 5000);
 });
   
